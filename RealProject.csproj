@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19F0A447-9A58-48FF-84ED-9918EE2D9598}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Day2</RootNamespace>
+    <AssemblyName>Day2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGOOOOOOO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.3\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.34.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.34.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.34.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.34.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 8.3.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Saladpuk.EMVCo, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Saladpuk.EMVCo.1.1.1\lib\netstandard2.0\Saladpuk.EMVCo.dll</HintPath>
+    </Reference>
+    <Reference Include="Saladpuk.EMVCo.Contracts, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Saladpuk.EMVCo.Contracts.1.0.1\lib\netstandard2.0\Saladpuk.EMVCo.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Saladpuk.PromptPay, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Saladpuk.PromptPay.3.0.1\lib\netstandard2.0\Saladpuk.PromptPay.dll</HintPath>
+    </Reference>
+    <Reference Include="Saladpuk.PromptPay.Contracts, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Saladpuk.PromptPay.Contracts.3.0.1\lib\netstandard2.0\Saladpuk.PromptPay.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Specialized.4.3.0\lib\net46\System.Collections.Specialized.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.34.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.7.1.0\lib\net462\Twilio.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LastPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LastPage.Designer.cs">
+      <DependentUpon>LastPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page10_SaleHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page10_SaleHist.Designer.cs">
+      <DependentUpon>Page10_SaleHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page11_UserSaleHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page11_UserSaleHist.Designer.cs">
+      <DependentUpon>Page11_UserSaleHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page12_AdminSaleHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page12_AdminSaleHist.Designer.cs">
+      <DependentUpon>Page12_AdminSaleHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page2_SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page2_SignIn.Designer.cs">
+      <DependentUpon>Page2_SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page3_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page3_login.Designer.cs">
+      <DependentUpon>Page3_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page1_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page1_Main.Designer.cs">
+      <DependentUpon>Page1_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page4_Admin_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page4_Admin_.Designer.cs">
+      <DependentUpon>Page4_Admin_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page5_Selling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page5_Selling.Designer.cs">
+      <DependentUpon>Page5_Selling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page6_1_UserSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page6_1_UserSignIn.Designer.cs">
+      <DependentUpon>Page6_1_UserSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page6_2_UserSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page6_2_UserSignIn.Designer.cs">
+      <DependentUpon>Page6_2_UserSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page7_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page7_Confirm.Designer.cs">
+      <DependentUpon>Page7_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page8_Adminselect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page8_Adminselect.Designer.cs">
+      <DependentUpon>Page8_Adminselect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page9_UserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page9_UserEdit.Designer.cs">
+      <DependentUpon>Page9_UserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LastPage.resx">
+      <DependentUpon>LastPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page10_SaleHist.resx">
+      <DependentUpon>Page10_SaleHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page11_UserSaleHist.resx">
+      <DependentUpon>Page11_UserSaleHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page12_AdminSaleHist.resx">
+      <DependentUpon>Page12_AdminSaleHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page2_SignIn.resx">
+      <DependentUpon>Page2_SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page3_login.resx">
+      <DependentUpon>Page3_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page1_Main.resx">
+      <DependentUpon>Page1_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page4_Admin_.resx">
+      <DependentUpon>Page4_Admin_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page5_Selling.resx">
+      <DependentUpon>Page5_Selling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page6_1_UserSignIn.resx">
+      <DependentUpon>Page6_1_UserSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page6_2_UserSignIn.resx">
+      <DependentUpon>Page6_2_UserSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page7_Confirm.resx">
+      <DependentUpon>Page7_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page8_Adminselect.resx">
+      <DependentUpon>Page8_Adminselect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page9_UserEdit.resx">
+      <DependentUpon>Page9_UserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Content\bootstrap-grid.css.map" />
+    <None Include="Content\bootstrap-grid.min.css.map" />
+    <None Include="Content\bootstrap-grid.rtl.css.map" />
+    <None Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <None Include="Content\bootstrap-reboot.css.map" />
+    <None Include="Content\bootstrap-reboot.min.css.map" />
+    <None Include="Content\bootstrap-reboot.rtl.css.map" />
+    <None Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="Content\bootstrap-utilities.css.map" />
+    <None Include="Content\bootstrap-utilities.min.css.map" />
+    <None Include="Content\bootstrap-utilities.rtl.css.map" />
+    <None Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="Content\bootstrap.rtl.css.map" />
+    <None Include="Content\bootstrap.rtl.min.css.map" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Scripts\bootstrap.bundle.min.js.map" />
+    <None Include="Scripts\bootstrap.esm.js.map" />
+    <None Include="Scripts\bootstrap.esm.min.js.map" />
+    <None Include="Scripts\bootstrap.js.map" />
+    <None Include="Scripts\bootstrap.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\3.jpg" />
+    <None Include="Resources\2.jpg" />
+    <None Include="Resources\4.jpg" />
+    <None Include="Resources\6.jpg" />
+    <None Include="Resources\5.jpg" />
+    <None Include="Resources\7.jpg" />
+    <None Include="Resources\51.jpg" />
+    <None Include="Resources\8.jpg" />
+    <None Include="Resources\9.jpg" />
+    <None Include="Resources\66666.jpg" />
+    <None Include="Resources\VDOGIF.gif" />
+    <None Include="Resources\VDOGIFFFF.gif" />
+    <None Include="Resources\VDOSPORTGIF.gif" />
+    <None Include="Resources\VDOSPORTGIFFFFF.gif" />
+    <None Include="Resources\44444444.jpg" />
+    <None Include="Resources\BUNGVDOGIFFFF.gif" />
+    <None Include="Resources\9999999.jpg" />
+    <None Include="Resources\99.jpg" />
+    <None Include="Resources\999.jpg" />
+    <None Include="Resources\9999999999999.jpg" />
+    <None Include="Resources\919.jpg" />
+    <None Include="Resources\10.jpg" />
+    <None Include="Resources\11.jpg" />
+    <None Include="Resources\101010.jpg" />
+    <None Include="Resources\12.jpg" />
+    <None Include="Resources\13.jpg" />
+    <None Include="Resources\121.jpg" />
+    <None Include="Resources\121212.jpg" />
+    <None Include="Resources\13131313.jpg" />
+    <None Include="Resources\13131313131313.jpg" />
+    <None Include="Resources\1112.jpg" />
+    <None Include="Resources\66.jpg" />
+    <None Include="Resources\77.jpg" />
+    <None Include="Resources\888888.jpg" />
+    <None Include="Resources\QRQRQR.jpg" />
+    <None Include="Resources\QQQQQ.jpg" />
+    <None Include="Resources\99999996666666.jpg" />
+    <None Include="Resources\121222111133.jpg" />
+    <None Include="Resources\12341234.jpg" />
+    <None Include="Resources\12121313.jpg" />
+    <None Include="Resources\121212131313.jpg" />
+    <None Include="Resources\666666666.jpg" />
+    <None Include="Resources\666666666666666.jpg" />
+    <None Include="Resources\66666666666666666666666666666666777.jpg" />
+    <None Include="Resources\99999999999996666.jpg" />
+    <None Include="Resources\1212121212121212121212121212.jpg" />
+    <None Include="Resources\121212121212121212121212121212121212122222222.jpg" />
+    <None Include="Resources\99999999999996666666.jpg" />
+    <None Include="Resources\99999999999996666666666.jpg" />
+    <None Include="Resources\999999999999966666666661.jpg" />
+    <None Include="Resources\999996666666.jpg" />
+    <None Include="Resources\777.jpg" />
+    <None Include="Resources\9966.jpg" />
+    <None Include="Resources\99669966.jpg" />
+    <None Include="Resources\121212121212.jpg" />
+    <None Include="Resources\131313.jpg" />
+    <None Include="Resources\131313131313.jpg" />
+    <None Include="Resources\121212121212121212.jpg" />
+    <None Include="Resources\1010101010.jpg" />
+    <None Include="Resources\12121212.jpg" />
+    <None Include="Resources\1212121212121212121212.jpg" />
+    <None Include="Resources\1212.jpg" />
+    <None Include="Resources\123.jpg" />
+    <None Include="Resources\121111.jpg" />
+    <Content Include="LOGOOOOOOO.ico" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
